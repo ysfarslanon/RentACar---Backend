@@ -1,0 +1,19 @@
+Yeni bir entity eklemek için
+0>Veritabýnýndaki tablosunu oluþturunuz.
+
+1>Entities katmanýnýn Concrete Entity(Sample) classýný oluþturup :IEntity implement et
+
+2>DataAccess katmanýnýn Abstract klasörüne ISampleDal interface ekleyin :IEntityRepository<Sample> inheritence veriniz
+
+3>DataAccess katmanýnýn Concrte->EntityFramework klasörüne EfSampleDal  class ekleyin. 
+ve :EfEntityRepositoryBase<Sample,RentACarContext>,:ISampleDal inheritance veriniz.
+(ISampleDal o entitye ait özel operasyonlarýn yazýlacaðý alandýr özel operasyon eklenip EfSampleDal dan implement edilip özel operasyonlar oluþtrulur)
+
+4>RentACarContext.cs ye Sample entity i DbSet yapýnýz
+
+5>Business katmanýnýn Abstract klasörüne ISampleService yazýnýz.
+
+6>Business katmanýn Concrete klasörüne SampleManager:ISampleService implemente ediniz.
+
+7>WebAPI katmanýnda Controllers klasörüne entitynin Controllers i ekleyin
+(add,delete,update,getbyid,gettall,getbycarid)
