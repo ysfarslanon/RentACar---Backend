@@ -24,7 +24,7 @@ namespace Business.Concrete
         {
             _carImageDal = carImageDal;
         }
-        [SecuredOperation("admin", Priority = 1)]
+        //[SecuredOperation("admin", Priority = 1)]
         [CacheRemoveAspect("ICarImageService.Get")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(CarImage carImage, IFormFile file)
@@ -64,7 +64,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(carIm => carIm.CarId == carId));
         }
 
-        [SecuredOperation("admin", Priority = 1)]
+        //[SecuredOperation("admin", Priority = 1)]
         [CacheRemoveAspect("ICarImageService.Get")]
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Update(CarImage carImage, IFormFile file)
@@ -77,7 +77,7 @@ namespace Business.Concrete
         }
         
 
-        [SecuredOperation("admin", Priority = 1)]
+       // [SecuredOperation("admin", Priority = 1)]
         [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Delete(CarImage carImage)
         {

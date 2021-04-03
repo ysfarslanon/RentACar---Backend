@@ -25,7 +25,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        [SecuredOperation("admin", Priority = 1)]
+        //[SecuredOperation("admin", Priority = 1)]
         [CacheRemoveAspect("ICarService.Get")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
@@ -41,7 +41,7 @@ namespace Business.Concrete
 
         }
 
-        [SecuredOperation("admin", Priority = 1)]
+       // [SecuredOperation("admin", Priority = 1)]
         [CacheRemoveAspect("ICarService.Get")]        
         public IResult Delete(Car car)
         {
@@ -114,7 +114,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ModelYear >= min && c.ModelYear <= max));
         }
 
-        [SecuredOperation("admin",Priority =1)]
+       // [SecuredOperation("admin",Priority =1)]
         [CacheRemoveAspect("ICarService.Get")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)

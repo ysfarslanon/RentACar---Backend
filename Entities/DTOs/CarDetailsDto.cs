@@ -16,7 +16,9 @@ namespace Entities.DTOs
         public  string ColorName { get; set; }
         public int DailyPrice { get; set; }
         public int ModelYear { get; set; }
-        public List<CarImage> ImagePath { get; set; }
+        public List<CarImage> ImagePaths { get; set; }
+
+        //public bool Status { get; set; }
     }
 
 }

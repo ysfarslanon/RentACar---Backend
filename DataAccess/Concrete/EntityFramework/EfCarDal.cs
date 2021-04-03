@@ -33,7 +33,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  ColorName = color.Name,
                                  DailyPrice = car.DailyPrice,
                                  ModelYear = car.ModelYear,
-                                 ImagePath = context.CarImages.Where(img => img.CarId == car.Id).ToList()
+                                 ImagePaths = context.CarImages.Where(img => img.CarId == car.Id).ToList(),
+                                 //Status=!context.Rentals.Any(rent=>rent.CarId==car.Id&& rent.ReturnDate==null)
                                 
                              };
                 return result.ToList();

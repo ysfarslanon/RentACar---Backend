@@ -13,7 +13,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(rental => rental.CarId).NotEmpty();
             RuleFor(rental => rental.CustomerId).NotEmpty();
             RuleFor(rental => rental.RentDate).NotEmpty();
-            RuleFor(rental => rental.ReturnDate).GreaterThanOrEqualTo(r => r.RentDate);
+           // RuleFor(rental => rental.ReturnDate).GreaterThanOrEqualTo(r => r.RentDate);
             RuleFor(rental => rental.RentDate).GreaterThanOrEqualTo(DateTime.Now);
         }
     }
