@@ -41,14 +41,14 @@ namespace Business.Concrete
         [CacheRemoveAspect("IColorService.Get")]
         public IResult Delete(Color color)
         {
-            IResult result = BusinessRules.Run(MaintenceTime(22)
+            IResult result = BusinessRules.Run(MaintenceTime(18)
                );
             if (result != null)
             {
                 return result;
             }
-            _colorDal.Add(color);
-            return new SuccessResult(Messages.ColorAdded);
+            _colorDal.Delete(color);
+            return new SuccessResult();
         }
 
         [CacheAspect]
