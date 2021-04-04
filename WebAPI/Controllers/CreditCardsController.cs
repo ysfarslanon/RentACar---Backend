@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(CreditCard creditCard)
         {
             var result = _creditCardService.Delete(creditCard);
